@@ -10,9 +10,10 @@ use Illuminate\Support\Facades\Redirect;
 
 class AuthenticatedSessionController extends Controller
 {
-    /**
-     * Handle an incoming authentication request.
-     */
+    public function create()
+    {
+        return view('auth.login');
+    }
     public function store(LoginRequest $request): RedirectResponse
     {
         // Validate login request

@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\TaskController;
+use App\Http\Middleware\CorsMiddleware;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 
 Route::get('/', function () {
@@ -27,5 +29,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/login', [AuthenticatedSessionController::class, 'create'])-> name('login');
+Route::post('/login', [AuthenticatedSessionController::class, 'store']);
+
+Route::middleware([CorsMiddleware::class])->group(function () {
+    Route::get('/script.js', [ExampleController::class, 'index']);
+});
+
+Route::get('tasks', [TaskController::class, 'index']);
+Route::post('tasks', [TaskController::class, 'store']);
+Route::put('tasks/{id}', [TaskController::class, 'update']);
+Route::delete('tasks/{id}', [TaskController::class, 'destroy']);
 
 require __DIR__.'/auth.php';
