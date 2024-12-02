@@ -36,9 +36,11 @@ Route::middleware([CorsMiddleware::class])->group(function () {
     Route::get('/script.js', [ExampleController::class, 'index']);
 });
 
+Route::post('/register', [RegisterController::class, 'register'])->middleware('send.welcome.email');
+
+
 Route::get('tasks', [TaskController::class, 'index']);
 Route::post('tasks', [TaskController::class, 'store']);
 Route::put('tasks/{id}', [TaskController::class, 'update']);
 Route::delete('tasks/{id}', [TaskController::class, 'destroy']);
-
 require __DIR__.'/auth.php';

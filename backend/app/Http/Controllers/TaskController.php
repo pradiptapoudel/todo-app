@@ -17,8 +17,17 @@ class TaskController extends Controller
     // Creating new tasks
     public function store(Request $request)
     {
-        // Call storeTask from the base controller
-        return $this->storeTask($request);
+        // Validate the request data
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+        ]);
+
+        // Create the task in the database
+        $task = Task::create($validatedData);
+
+        // Return the created task as a JSON response
+        return response()->json($task, 201);
     }
 
     // Update a task

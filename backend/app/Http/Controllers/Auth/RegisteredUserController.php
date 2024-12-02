@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Inertia\Inertia;
 use Inertia\Response;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\Auth\WelcomeMail;
+
 
 class RegisteredUserController extends Controller
 {
@@ -42,7 +45,8 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        event(new Registered($user));
+        //Send email to registered user for confirmation
+        Mail::to($user->email)->send(new WelcomeMail($user));
 
         Auth::login($user);
 

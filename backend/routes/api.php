@@ -10,5 +10,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // Task API routes
-Route::apiResource('tasks', TaskController::class);
-Route::put('tasks/{task}', [TaskController::class, 'updateTask']);
+    Route::apiResource('tasks', TaskController::class);
+    Route::post('/tasks', [TaskController::class, 'store']);
+    Route::put('tasks/{task}', [TaskController::class, 'updateTask']);
+    Route::middleware('custom.cors')->group(function () {
+    Route::post('/api/tasks', [TaskController::class, 'store']);
+    });

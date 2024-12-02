@@ -1,143 +1,142 @@
-
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .container {
-    background-color: rgb(238, 222, 222);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  input {
-    width: 80%;
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  button {
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: greenyellow;
-  }
-  
-  button:hover {
-    opacity: 0.9;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px;
-    border-bottom: 1px solid darkgreen;
-  }
-  
-  .edit {
-    background-color: darkgreen;
-    color: white;
-  }
-  
-  .edit:hover {
-    background-color: green;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-  .delete {
-    background-color: rgb(226, 75, 75);
-    color: white;
-  }
-  
-  .delete:hover {
-    background-color: red;
-  }
-  
-  li input[type="text"] {
-    width: 80%;
-    padding: 5px;
-    border: none;
-    border-radius: 4px;
-  }
-  
-  /* dark Mode */
-  body.dark {
-    background-color: #121212;
-    color: white;
-  }
-  
-  .container.dark {
-    background-color: #1e1e1e;
-    color: white;
-  }
-  
-  button.dark {
-    background-color: #333;
-    color: white;
-  }
-  
-  li button.dark {
-    background-color: #555;
-  }
+.container {
+  background-color: rgb(238, 222, 222);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-  .edit {
-    background-color: darkgreen;
-    color: white;
-  }
-  
-  .edit:hover {
-    background-color: green;
-  }
+h1 {
+  text-align: center;
+}
 
-  .delete {
-    background-color: rgb(226, 75, 75);
-    color: white;
-  }
-  
-  .delete:hover {
-    background-color: red;
-  }
-  
-  /* Theme Toggle Button */
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  #themeToggle {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    transition: transform 0.5s ease;
-  }
-  
-  #themeToggle:hover {
-    transform: rotate(60deg);
-  }
-  
-  /* Style the task details and actions */
+input {
+  width: 80%;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: greenyellow;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid darkgreen;
+}
+
+.edit {
+  background-color: darkgreen;
+  color: white;
+}
+
+.edit:hover {
+  background-color: green;
+}
+
+.delete {
+  background-color: rgb(226, 75, 75);
+  color: white;
+}
+
+.delete:hover {
+  background-color: red;
+}
+
+li input[type="text"] {
+  width: 80%;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+}
+
+/* dark Mode */
+body.dark {
+  background-color: #121212;
+  color: white;
+}
+
+.container.dark {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+button.dark {
+  background-color: #333;
+  color: white;
+}
+
+li button.dark {
+  background-color: #555;
+}
+
+.edit {
+  background-color: darkgreen;
+  color: white;
+}
+
+.edit:hover {
+  background-color: green;
+}
+
+.delete {
+  background-color: rgb(226, 75, 75);
+  color: white;
+}
+
+.delete:hover {
+  background-color: red;
+}
+
+/* Theme Toggle Button */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+#themeToggle:hover {
+  transform: rotate(60deg);
+}
+
+/* Style the task details and actions */
 .task-details {
   margin-bottom: 10px; /* Adds gap between Name, Email, and Task */
 }
@@ -155,13 +154,14 @@ button {
 }
 
 /* Optionally, style the buttons */
-button.edit, button.delete {
+button.edit,
+button.delete {
   padding: 5px 10px;
   cursor: pointer;
 }
 
 button.edit {
-  background-color: #4CAF50; /* Green for edit */
+  background-color: #4caf50; /* Green for edit */
   color: white;
 }
 
